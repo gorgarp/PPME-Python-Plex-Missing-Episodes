@@ -18,9 +18,6 @@ PLEX_PASSWORD = ''
 BLACKLIST = ['The Big Bang Theory',
              'Dirty Jobs']
 
-TIMEOUT = 20
-MAX_ATTEMPTS = 3
-
 if __name__ == '__main__':
 
     # Get TVDB token
@@ -53,45 +50,16 @@ if __name__ == '__main__':
               '| Progress: {}%'.format(round((plex_shows.index(show) + 1) / len(plex_shows) * 100)))
         idx = show.guid
         show_id = idx[idx.index('//') + 2:idx.index('?')]
-        #print('Show id:', show_id)
-
-        response = requests.get('https://api.thetvdb.com/search/series?' + urlencode({'name': show.title}),
-                                headers=headers)
-        if response.status_code != 200:
-            print('Warning: Could not check show id. Http error', response.status_code)
-        else:
-            series = None
-            try:
-                data = json.loads(response.content.decode('utf-8'))['data']
-                series = [x for x in data if x['seriesName'] == show.title or show.title in x['aliases']][0]
-                idx = series['id']
-                if str(idx) != show_id:
-                    print('Warning: ids do not match.')
-                    print('Show id:', show_id, 'Id:', idx)
-                    print(series)
-            except:
-                print('Warning: Could not check show id.')
-                print('Series data:', series)
-                print(traceback.format_exc())
 
         # Collect episodes
         episodes = []
         page = 1
         try:
             while page is not None:
-
-                attempt = 1
-                success = False
-                while attempt < MAX_ATTEMPTS and not success:
-                    response = requests.get('https://api.thetvdb.com/series/{}/episodes?page={}'.format(show_id, page),
-                                            headers=headers)
-                    if response.status_code != 200:
-                        print('HTTP error:', response.status_code, 'Attempt:', attempt, 'Page:', page)
-                        attempt += 1
-                        sleep(TIMEOUT)
-                    else:
-                        success = True
-
+                response = requests.get('https://api.thetvdb.com/series/{}/episodes?page={}'.format(show_id, page),
+                                        headers=headers)
+                if response.status_code != 200:
+                    print('HTTP error:', response.status_code, 'Show id:', show_id, 'Page:', page)
                 episodes_json = json.loads(response.content)
                 page = episodes_json['links']['next']
                 episodes += episodes_json['data']
@@ -104,19 +72,15 @@ if __name__ == '__main__':
 
             aired_season = episode['airedSeason']
             if aired_season in [None, 0]:
-                #print('No season')
                 continue
             if episode['firstAired'] in [None, '']:
-                #print('Not aired')
                 continue
             date_first_aired = datetime.strptime(episode['firstAired'], '%Y-%m-%d')
             if datetime.now() + timedelta(days=-1) < date_first_aired:
-                #print('Time not ok')
                 continue
 
             episode_name = episode['episodeName']
             aired_episode_number = episode['airedEpisodeNumber']
-            #print(episode_name, aired_episode_number)
 
             try:
                 season = show.season(aired_season)
