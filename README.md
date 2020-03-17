@@ -8,6 +8,8 @@ You must have Python installed to run this. I've only tested on Linux.
 Remember to escape "'" symbols with "\\".
 
 
+/n
+
 Credit to:
 
  Michael Shepanski: https://pypi.org/project/PlexAPI/
