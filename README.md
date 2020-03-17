@@ -8,3 +8,8 @@ You must have Python installed to run this. I've only tested on Linux.
 Remember to escape "'" symbols with "\\".
 
 
+Credit to:
+
+ Michael Shepanski: https://pypi.org/project/PlexAPI/
+ Chase Wright: For inspiration, https://github.com/MysticRyuujin/PlexMissingEpisodes
+ Everyone at TVDB: https://thetvdb.com/
