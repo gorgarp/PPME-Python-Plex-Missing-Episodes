@@ -5,18 +5,16 @@ from plexapi.myplex import MyPlexAccount
 from plexapi.exceptions import NotFound
 
 # TheTVDB Authentication Information
-TVDB_AUTH = {'apikey': '0d70d6c2d66e60ec1abf15f7d4528c6f',
-             'userkey': '',
-             'username': ''
+TVDB_AUTH = {'apikey': ''
              }
 
 # Plex Server Information
-PLEX_SERVERNAME = ''    # Friendly name of the server, by default your computer's name.
+PLEX_SERVERNAME = ''    # Friendly name of the server. https://support.plex.tv/articles/200289496-general/.
 PLEX_USERNAME = ''
 PLEX_PASSWORD = ''
 
-BLACKLIST = ['The Big Bang Theory',
-             'Dirty Jobs']
+BLACKLIST = ['Show example',
+             'Example 2']
 
 if __name__ == '__main__':
 
