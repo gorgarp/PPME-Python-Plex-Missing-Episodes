@@ -5,6 +5,6 @@ Your library must have matched the shows using the TVDB agent. If not, this will
 
 You must have Python installed to run this. I've only tested on Linux.
 
-Remember to escape "'" symbols with "\".
+Remember to escape "'" symbols with "\\".
 
 
