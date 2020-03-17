@@ -6,10 +6,9 @@ Your library must have matched the shows using the TVDB agent. If not, this will
 You must have Python installed to run this. I've only tested on Linux.
 
 Remember to escape "'" symbols with "\\".
-
- \         
-\																	\																																										
-\
+<br/>
+<br/>
+<br/>
 Credit to:
 
  Michael Shepanski: https://pypi.org/project/PlexAPI/
