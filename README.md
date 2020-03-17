@@ -11,5 +11,7 @@ Remember to escape "'" symbols with "\\".
 Credit to:
 
  Michael Shepanski: https://pypi.org/project/PlexAPI/
+ 
  Chase Wright: For inspiration, https://github.com/MysticRyuujin/PlexMissingEpisodes
+ 
  Everyone at TVDB: https://thetvdb.com/
