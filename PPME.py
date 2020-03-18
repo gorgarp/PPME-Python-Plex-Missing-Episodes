@@ -13,6 +13,7 @@ PLEX_SERVERNAME = ''    # Friendly name of the server. https://support.plex.tv/a
 PLEX_USERNAME = ''
 PLEX_PASSWORD = ''
 
+# Blacklist will ignore shows, make sure to wrap in single quote and add comma in between shows.
 BLACKLIST = ['Show example',
              'Example 2']
 
