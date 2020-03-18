@@ -68,14 +68,14 @@ if __name__ == '__main__':
 
         # Check for missing
         for episode in episodes:
-
+#This can cause some oddity as far as things missing from that day but TVDB doesn't readily mark date aired with sub-day timestamps.
             aired_season = episode['airedSeason']
             if aired_season in [None, 0]:
                 continue
             if episode['firstAired'] in [None, '']:
                 continue
             date_first_aired = datetime.strptime(episode['firstAired'], '%Y-%m-%d')
-            if datetime.now() + timedelta(days=-1) < date_first_aired:
+            if datetime.now() + timedelta(days=-1) < date_first_aired: #
                 continue
 
             episode_name = episode['episodeName']
@@ -86,7 +86,7 @@ if __name__ == '__main__':
                 titles = [e.title for e in season.episodes()]
                 indexes = [e.index for e in season.episodes()]
             except NotFound:
-                # Season is not on Plex server
+                # Season is not found on server
                 titles = []
                 indexes = []
 
