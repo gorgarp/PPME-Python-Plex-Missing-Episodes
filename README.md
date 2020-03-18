@@ -18,6 +18,10 @@ Remember to escape "'" symbols with "\\".
 <br/>
 <br/>
 <br/>
+# I am very open to feedback, commits, ideas, etc.
+<br/>
+<br/>
+<br/>
 # Credit to:
 
  Michael Shepanski: https://pypi.org/project/PlexAPI/
