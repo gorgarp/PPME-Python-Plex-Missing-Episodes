@@ -19,7 +19,7 @@ Remember to escape "'" symbols with "\\".
 <br/>
 <br/>
 
-# I am very open to feedback, commits, ideas, etc.
+# I am very open to feedback, commits, ideas, etc. So far I've had very few issues but I can't account for all variables. 
 
 <br/>
 <br/>
