@@ -12,6 +12,7 @@ You will need:
 
 1. A TVDB API key (https://thetvdb.com/dashboard/account/apikey)
 2. Python 3.x
+3. (Ubuntu) sudo apt install python3-pip && sudo pip3 install plexapi
 <br/>
 You can edit the file to add shows to ignore.
 Remember to escape "'" symbols with "\\".
